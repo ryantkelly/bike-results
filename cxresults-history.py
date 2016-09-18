@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 #	write actual error handling I guess
 #	option to output to different files by category
 #	option to define what results of top riders you want
+#	also yes my code is crap, why don't you go munch my butt
 
 # Here is the stuff for you to define!
 writer = csv.writer(open('output.csv', 'w')) # Change the name of the output file if you want
