@@ -4,12 +4,13 @@ from bs4 import BeautifulSoup
 # todo: 
 #	write actual error handling I guess
 #	option to output to different files by category
+#	option to define what results of top riders you want
 
 # Here is the stuff for you to define!
 writer = csv.writer(open('output.csv', 'w')) # Change the name of the output file if you want
 payload = {'url': 'https://www.bikereg.com/Confirmed/31266'} # Enter the confirmed riders URL from BikeReg to send to Cross Results
 validYears = [str(2015), str(2016)] # Define the years of results you want to get - here, 2015 and 2016
-maxplacing = 4 # 0-indexed of the max placing you want to return - default is 4, therefore, top 5
+maxplacing = 4 # 0-indexed of the max placing you care about - default is 4, therefore the top 5 predicted's riders results will be returned
 
 predictor = 'https://www.crossresults.com/predictor.aspx'
 historyUrl = 'https://www.crossresults.com/racer/'
