@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 #	option to define what results of top riders you want
 #	also yes my code is crap, why don't you go munch my butt
 
+
 # Here is the stuff for you to define!
 writer = csv.writer(open('output.csv', 'w')) # Change the name of the output file if you want
 payload = {'url': 'https://www.bikereg.com/Confirmed/31266'} # Enter the confirmed riders URL from BikeReg to send to Cross Results
