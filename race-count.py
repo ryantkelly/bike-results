@@ -1,6 +1,9 @@
 import requests, sys, csv, json
 from bs4 import BeautifulSoup
 
+# todo:
+# 	This will not work well for events with multiple days, like KMC, as each field/day is considered it's own field on crossresults. So...fix that?
+
 # Here is the stuff for you to define!
 writer = csv.writer(open('output.csv', 'w')) # Change the name of the output file if you want
 payload = {'url': 'http://www.bikereg.com/Confirmed/32269'} # Enter the confirmed riders URL from BikeReg to send to Cross Results
