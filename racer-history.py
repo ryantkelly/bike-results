@@ -16,14 +16,14 @@ def is_number(s):
 
 # Here is the stuff for you to define!
 writer = csv.writer(open('output.csv', 'w')) # Change the name of the output file if you want
-payload = {'url': 'http://www.bikereg.com/Confirmed/32269'} # Enter the confirmed riders URL from BikeReg to send to Cross Results
+payload = {'url': 'https://www.bikereg.com/Confirmed/32407'} # Enter the confirmed riders URL from BikeReg to send to Cross Results
 validYears = [str(2015), str(2016)] # Define the years of results you want to get - here, 2015 and 2016
 predictorDepth = 4 # 0-indexed of the max predicting placing you care about - default is 4, therefore the top 5 predicted's riders results will be returned
-maxPlacing = 4 # 0-indexed. Max placing for riders results you care about. So, rider's top five results returned.
+maxPlacing = 10 # 0-indexed. Max placing for riders results you care about. So, rider's top five results returned.
 
 predictor = 'https://www.crossresults.com/predictor.aspx'
 historyUrl = 'https://www.crossresults.com/racer/'
-ignore = ['WAITLIST', 'Tent', 'Wait'] #words in categories you want to ignore
+ignore = ['WAITLIST', 'Tent', 'tent', 'Wait', 'Club', 'Expo', 'Credit', 'Parking', 'Preview', 'Pre-ride'] #words in categories you want to ignore
 
 r = requests.get(predictor, params=payload)
 if r.status_code != 200:
@@ -35,7 +35,7 @@ for category in soup.find_all('span', class_='categoryname'):
 	if any(x in category.text for x in ignore):
 		continue
 	print category.text
-	payload['cat'] = category.text
+	payload['cat'] = category['raceid']
 	r = requests.get(predictor, params=payload)
 	j = json.loads(r.text)
 	sort = {}
