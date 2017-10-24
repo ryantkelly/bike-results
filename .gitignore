@@ -1,0 +1,5 @@
+output/
+env/
+.vscode/
+.DS_Store
+start-list.csv
