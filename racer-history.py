@@ -15,7 +15,7 @@ def is_number(s):
 
 
 
-payload = {'url': 'https://www.bikereg.com/Confirmed/35729'} # Enter the confirmed riders URL from BikeReg to send to Cross Results
+payload = {'url': 'https://www.bikereg.com/Confirmed/36030'} # Enter the confirmed riders URL from BikeReg to send to Cross Results
 validYears = [str(2016), str(2017)] # Define the years of results you want to get - here, 2015 and 2016
 predictorDepth = 9 # 0-indexed of the max predicting placing you care about - default is 4, therefore the top 5 predicted's riders results will be returned
 maxPlacing = 4 # 0-indexed. Max placing for riders results you care about. So, rider's top five results returned.

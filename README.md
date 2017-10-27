@@ -17,4 +17,4 @@ Writes a .csv of top predicted racers (by field) and their recent results (up to
 
 ## splitStartList.py
 
-For the file created by `racer-history.py` (which is named `start-list.csv`), create individual files per field and put them in an `output` folder.
+Splits a BikeReg generated start list download into individual fields.
