@@ -1,12 +1,6 @@
-import requests, sys, csv, json, argparse
+import requests, sys, csv, json, argparse, os
 from bs4 import BeautifulSoup
 from pprint import pprint
-
-
-# todo: 
-#	write actual error handling I guess
-#	option to output to different files by category
-#	also yes my code is crap, why don't you go munch my butt
 
 def is_number(s):
 	try:
@@ -43,6 +37,10 @@ r = requests.get(predictor, params=payload)
 if r.status_code != 200:
 	print ('whoops' + r.status_code)
 	sys.exit()
+
+# Create output directory
+if not os.path.exists('output'):
+    os.makedirs('output')
 
 soup = BeautifulSoup(r.text, 'html.parser')
 for category in soup.find_all('span', class_='categoryname'):
