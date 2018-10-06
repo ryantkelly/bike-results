@@ -14,7 +14,7 @@ CSVs are written to a script-level folder called "output".
 Directory is not cleared by this script, so you'll have to do that manually.
 
 Arguments:
-- `--event_id` (requird): BikeReg event ID. 
+- `--event_id` (required): BikeReg event ID. 
 - `--years` (required): comma separated list of years to include in results. eg, 2017,2018
 - `--type` (required): type of event. `road` or `cross`. Required to get results from the correct site and handle some formatting differences.
 - `--predictor_depth` (optional): 0-indexed depth of the predicted riders to get info on. So, `9` would return the top 10 predicted finishers. Defaults to 9.
